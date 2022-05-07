@@ -6,8 +6,29 @@ const {
   getNews,
 } = require("../controllers/newsController");
 
+/**
+ * @swagger
+ * /addNews:
+ *   post:
+ *     description: add news 
+ *     responses:
+ *       200:
+ *         description: Success
+ * 
+ */
 router.post("/addNews", addNews);
 
+
+/**
+ * @swagger
+ * /getNews:
+ *   post:
+ *     description: get all news 
+ *     responses:
+ *       200:
+ *         description: Success
+ * 
+ */
 router.get("/getNews", getNews);
 
 module.exports = router;
