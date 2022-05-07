@@ -22,7 +22,7 @@ const swaggerOptions = {
 // app.use("/images", express.static("./images"));
 //routes
 
-const swaggerDocs = swaggerJsDoc(swaggerOptions);
+const swaggerDocs = swaggerJsdoc(swaggerOptions);
 app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerDocs));
 
 app.use("/news", newsRouter);
