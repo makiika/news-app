@@ -4,6 +4,7 @@ const cors = require("cors");
 const db = require("./models");
 const newsRouter = require("./routes/news");
 const swaggerJsdoc = require("swagger-jsdoc");
+const swaggerUI = require("swagger-ui-express");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -22,6 +23,7 @@ const swaggerOptions = {
 //routes
 
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
+app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerDocs));
 
 app.use("/news", newsRouter);
 
